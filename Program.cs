@@ -76,6 +76,8 @@
 
 // Задача 38. Задайте массив вещественных чисел. 
 // Найдите разницу между максимальным и минимальным элементов массива.
+// вариант 1.
+
 int[] CreateRandomArray(int start, int end)
 {
 Console.WriteLine("Введите кол-во элементов массива: ");
@@ -99,3 +101,45 @@ void ShowArray(int[] array)
 int[] myArray = CreateRandomArray(-100, 100);
 ShowArray(myArray);
 
+int max = int.MinValue;
+int min = int.MaxValue;
+foreach (int t in myArray)
+{
+    if (t < min)
+    min = t;
+    if (t > max)
+    max = t;
+}
+
+
+Console.WriteLine("Max: {0}", max);
+Console.WriteLine("Min: {0}", min);
+
+int raz = max - min;
+Console.WriteLine("Разница: " +raz);
+
+
+// вариант 2.(Методы создания и вывода массива оставляем из варианта 1.)
+// int[] myArray = CreateRandomArray(-100, 100);
+// ShowArray(myArray);
+// int min = myArray[0];
+// int max = myArray[0];
+// for (int i = 1; i < myArray.Length; i++)
+// {
+//     if (myArray[i] < min)
+//     {
+//         min = myArray[i];
+//     }
+//     else
+//     {
+//         if (myArray[i] > max)
+//         {
+//             max = myArray[i];
+//         }
+//     }
+// }
+// Console.WriteLine("Минимум: " +min);
+// Console.WriteLine("Максимум: " +max);
+
+// int raz = max - min;
+// Console.WriteLine("Разница: " +raz);
